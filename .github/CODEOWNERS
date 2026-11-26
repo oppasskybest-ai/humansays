@@ -1,0 +1,20 @@
+# Code owners get auto-requested for review. Last matching line wins, so every line lists Opeyemi too
+# (flyer rule: Opeyemi reviews every pull request).
+#
+# TODO (Opeyemi): replace the placeholders below with the REAL GitHub usernames, e.g. @opeyemi-dev
+# Placeholders: @OPEYEMI_GH @ROBIU_GH @MICHAEL_GH @PAUL_GH @BENJAMIN_GH @OLUWATOSIN_GH
+
+*                          @OPEYEMI_GH
+/src/lib/                  @OPEYEMI_GH
+/src/app/api/              @OPEYEMI_GH @ROBIU_GH
+/src/lib/db/               @OPEYEMI_GH @ROBIU_GH
+/supabase/                 @OPEYEMI_GH @ROBIU_GH
+/src/app/                  @MICHAEL_GH @OPEYEMI_GH
+/src/components/           @MICHAEL_GH @OPEYEMI_GH
+/src/lib/pi/client.ts      @MICHAEL_GH @OPEYEMI_GH
+/tailwind.config.ts        @MICHAEL_GH @PAUL_GH @OPEYEMI_GH
+/docs/design/              @PAUL_GH @OPEYEMI_GH
+/docs/qa/                  @BENJAMIN_GH @OPEYEMI_GH
+/src/tests/                @BENJAMIN_GH @OPEYEMI_GH
+/docs/marketing/           @OLUWATOSIN_GH @OPEYEMI_GH
+/README.md                 @OLUWATOSIN_GH @OPEYEMI_GH

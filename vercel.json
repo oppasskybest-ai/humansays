@@ -1,0 +1,9 @@
+{
+  "crons": [
+    { "path": "/api/cron/close-campaigns", "schedule": "0 1 * * *" },
+    { "path": "/api/cron/auto-approve",    "schedule": "0 2 * * *" },
+    { "path": "/api/cron/predictions",     "schedule": "0 3 * * *" },
+    { "path": "/api/cron/payouts",         "schedule": "0 4 * * *" },
+    { "path": "/api/cron/ai-flags",        "schedule": "0 5 * * *" }
+  ]
+}
