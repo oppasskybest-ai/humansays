@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+// @next-codemod-ignore Cache Components adoption: this segment temporarily allows blocking.
+// Remove this opt-out after verifying the segment passes validation without it.
+// See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
+
 // PUBLIC pages must work in ANY browser with NO Pi sign-in (needed for PiNet).
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
