@@ -12,14 +12,22 @@ import { z } from 'zod';
 
 export const PI_API_BASE = 'https://api.minepi.com/v2';
 
-const bool = z.enum(['true', 'false']).transform((v) => v === 'true');
-const stroops = z.string().regex(/^\d+$/, 'must be a whole number of stroops').transform((v) => BigInt(v));
+// NOTE: defaults are applied with .optional().transform(...) instead of .default(...) on purpose:
+// zod 4 changed how .default() behaves after a transform, and this form behaves the same in zod 3 and 4.
+const boolDefault = (fallback: 'true' | 'false') =>
+  z.enum(['true', 'false']).optional().transform((v) => (v ?? fallback) === 'true');
+const stroopsDefault = (fallback: string) =>
+  z
+    .string()
+    .regex(/^\d+$/, 'must be a whole number of stroops')
+    .optional()
+    .transform((v) => BigInt(v ?? fallback));
 
 /* ------------------------------ public (browser-safe) ------------------------------ */
 
 // NOTE: Next.js only inlines NEXT_PUBLIC_* when written out literally like below.
 const publicSchema = z.object({
-  NEXT_PUBLIC_PI_SANDBOX: bool.default('true'),
+  NEXT_PUBLIC_PI_SANDBOX: boolDefault('true'),
   NEXT_PUBLIC_STROOPS_PER_POINT: z.coerce.number().int().positive().default(10_000),
 });
 
@@ -41,10 +49,10 @@ const serverSchema = z
     FUNDING_MODE: z.enum(['pi', 'credits_only']).default('credits_only'),
     PAYOUT_MODE: z.enum(['points', 'pi_a2u']).default('points'),
     PLATFORM_FEE_BPS: z.coerce.number().int().min(0).max(5000).default(1000),
-    MIN_REWARD_STROOPS: stroops.default('10000'),
-    MIN_WITHDRAW_STROOPS: stroops.default('1000000'),
+    MIN_REWARD_STROOPS: stroopsDefault('10000'),
+    MIN_WITHDRAW_STROOPS: stroopsDefault('1000000'),
     MAX_RESPONSES_PER_DAY: z.coerce.number().int().positive().default(20),
-    MODERATION_REQUIRED: bool.default('true'),
+    MODERATION_REQUIRED: boolDefault('true'),
     SESSION_SECRET: z.string().min(32, 'SESSION_SECRET must be 32+ characters'),
     SUPABASE_URL: z.string().url(),
     SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),

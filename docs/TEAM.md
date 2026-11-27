@@ -23,3 +23,6 @@ From the team flyer ("Pi Hackathon Team: roles and how we work"). Owners below a
 
 ## Deadlines
 Final deadline: **Tue 5 Jan 2027, 11:59 PM PST** (Wed 6 Jan, 08:59 AM Lagos). Aim to submit by **3 Jan**. See `PI_BUILD_ROADMAP.md`.
+
+## Working with AI assistants
+Every AI session starts with "Who is working with this code right now?" (see `AGENTS.md`). Opeyemi gets full access after the nickname check. Everyone else gets help only inside the folders listed in the table above, and their AI writes a note in `docs/sessions/` instead of editing `docs/HANDOFF.md`. This guides the AI; the real protection is GitHub branch protection and Opeyemi approving every pull request.

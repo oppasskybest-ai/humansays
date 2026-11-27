@@ -37,7 +37,7 @@ When a step is done, tell me exactly which line to tick and what to write in the
 | Team members + Pi usernames | Opeyemi (@oppassky), |
 | Who submits the final app (only ONE person) | |
 | Prize split agreed (date, written where) | |
-| GitHub repo URL | |
+| GitHub repo URL | https://github.com/oppasskybest-ai/humansays |
 | Staging (Testnet) app ID | |
 | Production (Mainnet) app ID | |
 | Hosting URL (Vercel etc.) | |
@@ -115,8 +115,8 @@ Staging = practice mode with fake "Test Pi". The network **cannot be changed lat
 - [ ] 🤖 Add `.env` (with `PI_API_KEY=...` or `PI_NETWORK_API_KEY=...`, choose one name) and add `.env` to `.gitignore` **before the first commit**.
 - [ ] 🤖 Add the Pi SDK script tag in the page head: `<script src="https://sdk.minepi.com/pi-sdk.js"></script>`.
 - [ ] 🤖 Add embed headers for the Sandbox: no `X-Frame-Options`, CSP `frame-ancestors 'self' https://*.pinet.com https://*.minepi.com`, `connect-src 'self' https://socialchain.app` (guide, section 20.5).
-- [ ] 👤 Run it locally (`npm install`, `npm run dev`) and confirm the page opens at `http://localhost:3000`.
-- [ ] 👤 Create a GitHub repo, push the code, and write the repo URL in "Project facts".
+- [x] 👤 Run it locally (`npm install`, `npm run dev`) and confirm the page opens at `http://localhost:3000`.
+- [x] 👤 Create a GitHub repo, push the code, and write the repo URL in "Project facts".
 - [ ] 👤 (Optional) Open the repo in GitHub Codespaces for editing. Do Sandbox testing on your own computer if Codespaces gives trouble.
 
 **Done when:** the project runs locally, is on GitHub, and no secret is in the repo (check `.env` is ignored).
@@ -267,4 +267,6 @@ Staging apps cannot be listed. The hackathon accepts Mainnet apps, so you need a
 |---|---|---|---|
 | 21 Nov 2026 | Opeyemi | Signed in to Pi Developers console on computer; read docs; created guide and roadmap files | Phase 1 (partly) |
 | 26 Nov 2026 | Opeyemi + Claude | Generated HumanSays repo scaffold (structure, config, API stubs, migration, docs, AI rules). Not yet installed/built | Phase 3 (partly) |
+| 26 Nov 2026 | Opeyemi | Pushed repo to GitHub (public), enabled branch protection (PR + 1 approval), `npm install` and `npm run dev` verified, lockfile committed | Phase 3 |
+| 26 Nov 2026 | Claude | Reviewed uploaded repo (clean of secrets); flagged Next.js 14.2.18 as outdated, upgrade needed before deploy | Phase 3 |
 |  |  |  |  |

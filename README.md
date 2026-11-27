@@ -27,6 +27,9 @@ npm run dev                      # http://localhost:3000
 ```
 Other commands: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
 
+### Working in GitHub Codespaces (no local setup needed)
+On the repo page click **Code, Codespaces, Create codespace on main**. The terminal there already has git and Node. Run the commands above, work on a branch, push, and open a pull request. Keep secrets in `.env.local` or in Codespaces secrets, never in git. Stop the Codespace when you are done to save your free hours.
+
 Env var names and meanings are in [`.env.example`](.env.example) and spec section 13. All env/flags are read only in `src/lib/config.ts`.
 
 ### Testing with Pi
